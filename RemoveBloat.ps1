@@ -104,7 +104,7 @@ if ($liveversion -ne $currentversion) {
 write-host "Script has been updated, please download the latest version from $liveuri" -ForegroundColor Red
 }
 }
-Get-ScriptVersion -liveuri "https://raw.githubusercontent.com/andrew-s-taylor/public/main/De-Bloat/RemoveBloat.ps1"
+Get-ScriptVersion -liveuri "https://github.com/ehousse/Intune-De-Bloat/blob/57bd19abce195d3a2f57e3016b65c19ac7966303/RemoveBloat.ps1"
 
 
 
@@ -306,29 +306,29 @@ switch ($locale) {
         "Microsoft.GetHelp"
         "Microsoft.Getstarted"
         "Microsoft.Messaging"
-        "Microsoft.Microsoft3DViewer"
-        "Microsoft.MicrosoftOfficeHub"
+        #"Microsoft.Microsoft3DViewer"
+        #"Microsoft.MicrosoftOfficeHub"
         "Microsoft.MicrosoftSolitaireCollection"
         "Microsoft.NetworkSpeedTest"
         "Microsoft.MixedReality.Portal"
         "Microsoft.News"
         "Microsoft.Office.Lens"
-        "Microsoft.Office.OneNote"
+        #"Microsoft.Office.OneNote"
         "Microsoft.Office.Sway"
         "Microsoft.OneConnect"
         "Microsoft.People"
         "Microsoft.Print3D"
-        "Microsoft.RemoteDesktop"
+        #"Microsoft.RemoteDesktop"
         "Microsoft.SkypeApp"
         "Microsoft.StorePurchaseApp"
-        "Microsoft.Office.Todo.List"
-        "Microsoft.Whiteboard"
+        #"Microsoft.Office.Todo.List"
+        #"Microsoft.Whiteboard"
         "Microsoft.WindowsAlarms"
         #"Microsoft.WindowsCamera"
         "microsoft.windowscommunicationsapps"
         "Microsoft.WindowsFeedbackHub"
         "Microsoft.WindowsMaps"
-        "Microsoft.WindowsSoundRecorder"
+        #"Microsoft.WindowsSoundRecorder"
         "Microsoft.Xbox.TCUI"
         "Microsoft.XboxApp"
         "Microsoft.XboxGameOverlay"
@@ -359,15 +359,15 @@ switch ($locale) {
         "*Sway*"
         "*Speed Test*"
         "*Dolby*"
-        "*Office*"
+        #"*Office*"
         "*Disney*"
         "clipchamp.clipchamp"
         "*gaming*"
         "MicrosoftCorporationII.MicrosoftFamily"
         #Optional: Typically not removed but you can if you need to for some reason
-        #"*Microsoft.Advertising.Xaml_10.1712.5.0_x64__8wekyb3d8bbwe*"
-        #"*Microsoft.Advertising.Xaml_10.1712.5.0_x86__8wekyb3d8bbwe*"
-        #"*Microsoft.BingWeather*"
+        "*Microsoft.Advertising.Xaml_10.1712.5.0_x64__8wekyb3d8bbwe*"
+        "*Microsoft.Advertising.Xaml_10.1712.5.0_x86__8wekyb3d8bbwe*"
+        "*Microsoft.BingWeather*"
         #"*Microsoft.MSPaint*"
         #"*Microsoft.MicrosoftStickyNotes*"
         #"*Microsoft.Windows.Photos*"
@@ -398,7 +398,7 @@ $UserSIDs = Get-ChildItem "HKLM:\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Pr
         #Remove Background Tasks
         "HKCR:\Extensions\ContractId\Windows.BackgroundTasks\PackageId\46928bounde.EclipseManager_2.2.4.51_neutral__a5h4egax66k6y"
         "HKCR:\Extensions\ContractId\Windows.BackgroundTasks\PackageId\ActiproSoftwareLLC.562882FEEB491_2.6.18.18_neutral__24pqs290vpjk0"
-        "HKCR:\Extensions\ContractId\Windows.BackgroundTasks\PackageId\Microsoft.MicrosoftOfficeHub_17.7909.7600.0_x64__8wekyb3d8bbwe"
+        #"HKCR:\Extensions\ContractId\Windows.BackgroundTasks\PackageId\Microsoft.MicrosoftOfficeHub_17.7909.7600.0_x64__8wekyb3d8bbwe"
         "HKCR:\Extensions\ContractId\Windows.BackgroundTasks\PackageId\Microsoft.PPIProjection_10.0.15063.0_neutral_neutral_cw5n1h2txyewy"
         "HKCR:\Extensions\ContractId\Windows.BackgroundTasks\PackageId\Microsoft.XboxGameCallableUI_1000.15063.0.0_neutral_neutral_cw5n1h2txyewy"
         "HKCR:\Extensions\ContractId\Windows.BackgroundTasks\PackageId\Microsoft.XboxGameCallableUI_1000.16299.15.0_neutral_neutral_cw5n1h2txyewy"
@@ -414,7 +414,7 @@ $UserSIDs = Get-ChildItem "HKLM:\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Pr
         "HKCR:\Extensions\ContractId\Windows.Launch\PackageId\Microsoft.XboxGameCallableUI_1000.16299.15.0_neutral_neutral_cw5n1h2txyewy"
             
         #Scheduled Tasks to delete
-        "HKCR:\Extensions\ContractId\Windows.PreInstalledConfigTask\PackageId\Microsoft.MicrosoftOfficeHub_17.7909.7600.0_x64__8wekyb3d8bbwe"
+        #"HKCR:\Extensions\ContractId\Windows.PreInstalledConfigTask\PackageId\Microsoft.MicrosoftOfficeHub_17.7909.7600.0_x64__8wekyb3d8bbwe"
             
         #Windows Protocol Keys
         "HKCR:\Extensions\ContractId\Windows.Protocol\PackageId\ActiproSoftwareLLC.562882FEEB491_2.6.18.18_neutral__24pqs290vpjk0"
@@ -553,21 +553,21 @@ $UserSIDs = Get-ChildItem "HKLM:\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Pr
     Set-ItemProperty $WifiSense3  AutoConnectAllowedOEM -Value 0 
         
     #Disables live tiles
-    Write-Host "Disabling live tiles"
-    $Live = "HKCU:\SOFTWARE\Policies\Microsoft\Windows\CurrentVersion\PushNotifications"    
-    If (!(Test-Path $Live)) {      
-        New-Item $Live
-    }
-    Set-ItemProperty $Live  NoTileApplicationNotification -Value 1 
+    #Write-Host "Disabling live tiles"
+    #$Live = "HKCU:\SOFTWARE\Policies\Microsoft\Windows\CurrentVersion\PushNotifications"    
+    #If (!(Test-Path $Live)) {      
+    #    New-Item $Live
+    #}
+    #Set-ItemProperty $Live  NoTileApplicationNotification -Value 1 
 
     ##Loop through users and do the same
-    foreach ($sid in $UserSIDs) {
-        $Live = "HKU:\$sid\SOFTWARE\Policies\Microsoft\Windows\CurrentVersion\PushNotifications"    
-        If (!(Test-Path $Live)) {      
-            New-Item $Live
-        }
-        Set-ItemProperty $Live  NoTileApplicationNotification -Value 1 
-    }
+    #foreach ($sid in $UserSIDs) {
+    #   $Live = "HKU:\$sid\SOFTWARE\Policies\Microsoft\Windows\CurrentVersion\PushNotifications"    
+    #    If (!(Test-Path $Live)) {      
+    #        New-Item $Live
+    #    }
+    #    Set-ItemProperty $Live  NoTileApplicationNotification -Value 1 
+    #}
         
     #Turns off Data Collection via the AllowTelemtry key by changing it to 0
     # This is needed for Intune reporting to work, uncomment if using via other method
@@ -656,15 +656,15 @@ $UserSIDs = Get-ChildItem "HKLM:\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Pr
 
 
     #Removes 3D Objects from the 'My Computer' submenu in explorer
-    Write-Host "Removing 3D Objects from explorer 'My Computer' submenu"
-    $Objects32 = "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\MyComputer\NameSpace\{0DB7E03F-FC29-4DC6-9020-FF41B59E513A}"
-    $Objects64 = "HKLM:\SOFTWARE\WOW6432Node\Microsoft\Windows\CurrentVersion\Explorer\MyComputer\NameSpace\{0DB7E03F-FC29-4DC6-9020-FF41B59E513A}"
-    If (Test-Path $Objects32) {
-        Remove-Item $Objects32 -Recurse 
-    }
-    If (Test-Path $Objects64) {
-        Remove-Item $Objects64 -Recurse 
-    }
+    #Write-Host "Removing 3D Objects from explorer 'My Computer' submenu"
+    #$Objects32 = "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\MyComputer\NameSpace\{0DB7E03F-FC29-4DC6-9020-FF41B59E513A}"
+    #$Objects64 = "HKLM:\SOFTWARE\WOW6432Node\Microsoft\Windows\CurrentVersion\Explorer\MyComputer\NameSpace\{0DB7E03F-FC29-4DC6-9020-FF41B59E513A}"
+    #If (Test-Path $Objects32) {
+    #    Remove-Item $Objects32 -Recurse 
+    #}
+    #If (Test-Path $Objects64) {
+    #    Remove-Item $Objects64 -Recurse 
+    #}
 
    
     ##Removes the Microsoft Feeds from displaying
@@ -765,7 +765,7 @@ If ($null -ne $ProvisionedPackage)
 }
 
 ##Tweak reg permissions
-invoke-webrequest -uri "https://github.com/andrew-s-taylor/public/raw/main/De-Bloat/SetACL.exe" -outfile "C:\Windows\Temp\SetACL.exe"
+invoke-webrequest -uri "https://github.com/ehousse/Intune-De-Bloat/blob/57bd19abce195d3a2f57e3016b65c19ac7966303/SetACL.exe" -outfile "C:\Windows\Temp\SetACL.exe"
 C:\Windows\Temp\SetACL.exe -on "HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Communications" -ot reg -actn setowner -ownr "n:$everyone"
  C:\Windows\Temp\SetACL.exe -on "HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Communications" -ot reg -actn ace -ace "n:$everyone;p:full"
 
@@ -1005,7 +1005,7 @@ $appname = $_.Name
 }
 
 ##Remove HP Connect Optimizer
-invoke-webrequest -uri "https://raw.githubusercontent.com/andrew-s-taylor/public/main/De-Bloat/HPConnOpt.iss" -outfile "C:\Windows\Temp\HPConnOpt.iss"
+invoke-webrequest -uri "https://raw.githubusercontent.com/ehousse/Intune-De-Bloat/main/HPConnOpt.iss" -outfile "C:\Windows\Temp\HPConnOpt.iss"
 
 &'C:\Program Files (x86)\InstallShield Installation Information\{6468C4A5-E47E-405F-B675-A70A70983EA6}\setup.exe' @('-s', '-f1C:\Windows\Temp\HPConnOpt.iss')
 
@@ -1289,7 +1289,7 @@ if ($mcafeeinstalled -eq "true") {
 ### Download McAfee Consumer Product Removal Tool ###
 write-host "Downloading McAfee Removal Tool"
 # Download Source
-$URL = 'https://github.com/andrew-s-taylor/public/raw/main/De-Bloat/mcafeeclean.zip'
+$URL = 'https://github.com/ehousse/Intune-De-Bloat/blob/57bd19abce195d3a2f57e3016b65c19ac7966303/mcafeeclean.zip'
 
 # Set Save Directory
 $destination = 'C:\ProgramData\Debloat\mcafee.zip'
