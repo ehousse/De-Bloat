@@ -718,10 +718,10 @@ else {
 #                                             Disable Services                                             #
 #                                                                                                          #
 ############################################################################################################
-    Write-Host "Stopping and disabling Diagnostics Tracking Service"
+    ##Write-Host "Stopping and disabling Diagnostics Tracking Service"
     #Disabling the Diagnostics Tracking Service
-    Stop-Service "DiagTrack"
-    Set-Service "DiagTrack" -StartupType Disabled
+    ##Stop-Service "DiagTrack"
+    ##Set-Service "DiagTrack" -StartupType Disabled
 
 
 ############################################################################################################
