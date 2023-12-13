@@ -119,7 +119,7 @@ if ($liveversion -ne $currentversion) {
 write-host "Script has been updated, please download the latest version from $liveuri" -ForegroundColor Red
 }
 }
-Get-ScriptVersion -liveuri "https://raw.githubusercontent.com/andrew-s-taylor/public/main/De-Bloat/RemoveBloat.ps1"
+Get-ScriptVersion -liveuri "https://raw.githubusercontent.com/ehousse/Intune-De-Bloat/main/RemoveBloat.ps1"
 
 
 
