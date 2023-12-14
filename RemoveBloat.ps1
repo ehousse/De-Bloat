@@ -334,7 +334,7 @@ switch ($locale) {
         "Microsoft.OneConnect"
         "Microsoft.People"
         "Microsoft.Print3D"
-        "Microsoft.RemoteDesktop"
+        #"Microsoft.RemoteDesktop"
         "Microsoft.SkypeApp"
         "Microsoft.StorePurchaseApp"
         "Microsoft.Office.Todo.List"
@@ -571,21 +571,21 @@ $UserSIDs = Get-ChildItem "HKLM:\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Pr
     Set-ItemProperty $WifiSense3  AutoConnectAllowedOEM -Value 0 
         
     #Disables live tiles
-    #Write-Host "Disabling live tiles"
-    #$Live = "HKCU:\SOFTWARE\Policies\Microsoft\Windows\CurrentVersion\PushNotifications"    
-    #If (!(Test-Path $Live)) {      
-    #    New-Item $Live
-    #}
-    #Set-ItemProperty $Live  NoTileApplicationNotification -Value 1 
+    Write-Host "Disabling live tiles"
+    $Live = "HKCU:\SOFTWARE\Policies\Microsoft\Windows\CurrentVersion\PushNotifications"    
+    If (!(Test-Path $Live)) {      
+        New-Item $Live
+    }
+    Set-ItemProperty $Live  NoTileApplicationNotification -Value 1 
 
     ##Loop through users and do the same
-    #foreach ($sid in $UserSIDs) {
-    #    $Live = "Registry::HKU\$sid\SOFTWARE\Policies\Microsoft\Windows\CurrentVersion\PushNotifications"    
-    #    If (!(Test-Path $Live)) {      
-    #        New-Item $Live
-    #    }
-    #    Set-ItemProperty $Live  NoTileApplicationNotification -Value 1 
-    #}
+    foreach ($sid in $UserSIDs) {
+        $Live = "Registry::HKU\$sid\SOFTWARE\Policies\Microsoft\Windows\CurrentVersion\PushNotifications"    
+        If (!(Test-Path $Live)) {      
+            New-Item $Live
+        }
+        Set-ItemProperty $Live  NoTileApplicationNotification -Value 1 
+    }
         
     #Turns off Data Collection via the AllowTelemtry key by changing it to 0
     # This is needed for Intune reporting to work, uncomment if using via other method
@@ -674,15 +674,15 @@ $UserSIDs = Get-ChildItem "HKLM:\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Pr
 
 
     #Removes 3D Objects from the 'My Computer' submenu in explorer
-    #Write-Host "Removing 3D Objects from explorer 'My Computer' submenu"
-    #$Objects32 = "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\MyComputer\NameSpace\{0DB7E03F-FC29-4DC6-9020-FF41B59E513A}"
-    #$Objects64 = "HKLM:\SOFTWARE\WOW6432Node\Microsoft\Windows\CurrentVersion\Explorer\MyComputer\NameSpace\{0DB7E03F-FC29-4DC6-9020-FF41B59E513A}"
-    #If (Test-Path $Objects32) {
-    #    Remove-Item $Objects32 -Recurse 
-    #}
-    #If (Test-Path $Objects64) {
-    #    Remove-Item $Objects64 -Recurse 
-    #}
+    Write-Host "Removing 3D Objects from explorer 'My Computer' submenu"
+    $Objects32 = "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\MyComputer\NameSpace\{0DB7E03F-FC29-4DC6-9020-FF41B59E513A}"
+    $Objects64 = "HKLM:\SOFTWARE\WOW6432Node\Microsoft\Windows\CurrentVersion\Explorer\MyComputer\NameSpace\{0DB7E03F-FC29-4DC6-9020-FF41B59E513A}"
+    If (Test-Path $Objects32) {
+        Remove-Item $Objects32 -Recurse 
+    }
+    If (Test-Path $Objects64) {
+        Remove-Item $Objects64 -Recurse 
+    }
 
    
     ##Removes the Microsoft Feeds from displaying
@@ -811,7 +811,7 @@ write-host "Removed Teams Chat"
 #                                                                                                          #
 ############################################################################################################
 $version = Get-WMIObject win32_operatingsystem | Select-Object Caption
-if ($version.Caption -like "*Windows*") {
+if ($version.Caption -like "*Windows 10*") {
     write-host "Removing Windows Backup"
     $filepath = "C:\Windows\SystemApps\MicrosoftWindows.Client.CBS_cw5n1h2txyewy\WindowsBackup\Assets"
 if (Test-Path $filepath) {
