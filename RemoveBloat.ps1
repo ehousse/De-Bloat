@@ -152,30 +152,6 @@ $locale = Get-WinSystemLocale | Select-Object -expandproperty Name
 ##Switch on locale to set variables
 ## Switch on locale to set variables
 switch ($locale) {
-    "ar-SA" {
-        $everyone = "الجميع"
-        $builtin = "مدمج"
-    }
-    "bg-BG" {
-        $everyone = "Всички"
-        $builtin = "Вграден"
-    }
-    "cs-CZ" {
-        $everyone = "Všichni"
-        $builtin = "Vestavěný"
-    }
-    "da-DK" {
-        $everyone = "Alle"
-        $builtin = "Indbygget"
-    }
-    "de-DE" {
-        $everyone = "Jeder"
-        $builtin = "Integriert"
-    }
-    "el-GR" {
-        $everyone = "Όλοι"
-        $builtin = "Ενσωματωμένο"
-    }
     "en-US" {
         $everyone = "Everyone"
         $builtin = "Builtin"
@@ -183,118 +159,6 @@ switch ($locale) {
     "en-GB" {
         $everyone = "Everyone"
         $builtin = "Builtin"
-    }
-    "es-ES" {
-        $everyone = "Todos"
-        $builtin = "Incorporado"
-    }
-    "et-EE" {
-        $everyone = "Kõik"
-        $builtin = "Sisseehitatud"
-    }
-    "fi-FI" {
-        $everyone = "Kaikki"
-        $builtin = "Sisäänrakennettu"
-    }
-    "fr-FR" {
-        $everyone = "Tout le monde"
-        $builtin = "Intégré"
-    }
-    "he-IL" {
-        $everyone = "כולם"
-        $builtin = "מובנה"
-    }
-    "hr-HR" {
-        $everyone = "Svi"
-        $builtin = "Ugrađeni"
-    }
-    "hu-HU" {
-        $everyone = "Mindenki"
-        $builtin = "Beépített"
-    }
-    "it-IT" {
-        $everyone = "Tutti"
-        $builtin = "Incorporato"
-    }
-    "ja-JP" {
-        $everyone = "すべてのユーザー"
-        $builtin = "ビルトイン"
-    }
-    "ko-KR" {
-        $everyone = "모든 사용자"
-        $builtin = "기본 제공"
-    }
-    "lt-LT" {
-        $everyone = "Visi"
-        $builtin = "Įmontuotas"
-    }
-    "lv-LV" {
-        $everyone = "Visi"
-        $builtin = "Iebūvēts"
-    }
-    "nb-NO" {
-        $everyone = "Alle"
-        $builtin = "Innebygd"
-    }
-    "nl-NL" {
-        $everyone = "Iedereen"
-        $builtin = "Ingebouwd"
-    }
-    "pl-PL" {
-        $everyone = "Wszyscy"
-        $builtin = "Wbudowany"
-    }
-    "pt-BR" {
-        $everyone = "Todos"
-        $builtin = "Integrado"
-    }
-    "pt-PT" {
-        $everyone = "Todos"
-        $builtin = "Incorporado"
-    }
-    "ro-RO" {
-        $everyone = "Toată lumea"
-        $builtin = "Incorporat"
-    }
-    "ru-RU" {
-        $everyone = "Все пользователи"
-        $builtin = "Встроенный"
-    }
-    "sk-SK" {
-        $everyone = "Všetci"
-        $builtin = "Vstavaný"
-    }
-    "sl-SI" {
-        $everyone = "Vsi"
-        $builtin = "Vgrajen"
-    }
-    "sr-Latn-RS" {
-        $everyone = "Svi"
-        $builtin = "Ugrađeni"
-    }
-    "sv-SE" {
-        $everyone = "Alla"
-        $builtin = "Inbyggd"
-    }
-    "th-TH" {
-        $everyone = "ทุกคน"
-        $builtin = "ภายในเครื่อง"
-    }
-    "tr-TR" {
-        $everyone = "Herkes"
-        $builtin = "Yerleşik"
-    }
-    "uk-UA" {
-        $everyone = "Всі"
-        $builtin = "Вбудований"
-    }
-    "zh-CN" {
-        $everyone = "所有人"
-        $builtin = "内置"
-    }
-    "zh-TW" {
-        $everyone = "所有人"
-        $builtin = "內建"
     }
     default {
         $everyone = "Everyone"
@@ -316,7 +180,6 @@ switch ($locale) {
         'Microsoft.WindowsCalculator',
         'Microsoft.WindowsStore',
         'Microsoft.Windows.Photos',
-        #'CanonicalGroupLimited.UbuntuonWindows',
         'Microsoft.MicrosoftStickyNotes',
         'Microsoft.MSPaint',
         'Microsoft.WindowsCamera',
@@ -1983,12 +1846,11 @@ Start-Sleep -Seconds 5
 write-host "Completed"
 
 Stop-Transcript
-
 # SIG # Begin signature block
 # MIImyQYJKoZIhvcNAQcCoIImujCCJrYCAQExCzAJBgUrDgMCGgUAMGkGCisGAQQB
 # gjcCAQSgWzBZMDQGCisGAQQBgjcCAR4wJgIDAQAABBAfzDtgWUsITrck0sYpfvNR
-# AgEAAgEAAgEAAgEAAgEAMCEwCQYFKw4DAhoFAAQUoro8RlwcttlCpmyvJ7YUUxJ8
-# BqiggiATMIIFjTCCBHWgAwIBAgIQDpsYjvnQLefv21DiCEAYWjANBgkqhkiG9w0B
+# AgEAAgEAAgEAAgEAAgEAMCEwCQYFKw4DAhoFAAQUc+iJVjvJd8eFV7bEyDytfJUZ
+# vOaggiATMIIFjTCCBHWgAwIBAgIQDpsYjvnQLefv21DiCEAYWjANBgkqhkiG9w0B
 # AQwFADBlMQswCQYDVQQGEwJVUzEVMBMGA1UEChMMRGlnaUNlcnQgSW5jMRkwFwYD
 # VQQLExB3d3cuZGlnaWNlcnQuY29tMSQwIgYDVQQDExtEaWdpQ2VydCBBc3N1cmVk
 # IElEIFJvb3QgQ0EwHhcNMjIwODAxMDAwMDAwWhcNMzExMTA5MjM1OTU5WjBiMQsw
@@ -2163,33 +2025,33 @@ Stop-Transcript
 # FDASBgoJkiaJk/IsZAEZFgREQlJJMRUwEwYDVQQDEwxEQlJJIFNVQiBDQTECE1sA
 # AK2/qm0XXVtmUJYAAgAArb8wCQYFKw4DAhoFAKB4MBgGCisGAQQBgjcCAQwxCjAI
 # oAKAAKECgAAwGQYJKoZIhvcNAQkDMQwGCisGAQQBgjcCAQQwHAYKKwYBBAGCNwIB
-# CzEOMAwGCisGAQQBgjcCARUwIwYJKoZIhvcNAQkEMRYEFJAlphPPaB0g8Fec3cFQ
-# 3vDTYFwhMA0GCSqGSIb3DQEBAQUABIICAKSTiYTSUt/7jlVVtuCQmnMjdIYV1et9
-# g0Q0m0OMzOjiz86Dd1wH75OfA7sIdUFAEC8BMvIdgYaYmTFM4qNXZ4Pc6FP/D297
-# Ve/QSQHZzFKW/TFRmqth/J1GkKOCbXvGwGEpwpzm6aegDzAuU1lNoneIR16++I2C
-# XmvsSAFLJtnTGGFEmGWkPuCsnzqQXVEz+e0cjXnruKWttZ+JM3ISLW1lGvNOWDoW
-# g3NlxKPnlOuLy2VR1RmccpURQje/P5C08mhvKTxaYPB+3t9I+ImpqpJ7Ohb6Y9yE
-# iLIuskPAti5GMEUGWWQ3VzDPVYC6YBCyGer5UJIBi5Rgk0J9YqTC4aGO0DZzvLom
-# sD1kmhDJqo2tm6EgNrYQVTBNE6fRsL3Z1ZfntBRNM5+yEgONeG418Gue2oO4Y4jk
-# 4QlyqmA5ENzJfoXPfiVxzCnVdZr4WYWr4qIDi8gWNCUb6yona5iYn7RsJjhC4itX
-# vZ/mij5H/Yojo7HCJJFIIWZ68pk+7SszxFwNZzBTcEGVDLfApt5y4WHWCG0PCjB4
-# xgYIgvSTFTtwWzYz3OaD7Ni5jtpOnpUM4aGMkw+O/JMkz8Oic0oaALHtARFSXJoY
-# a/XQ09GytaQhSlgzJTgTHIqVNM0F2ixOpUKWYpEoK5G+Y/NYueAeMhnN4sUmDivv
-# mGihtZnJrXISoYIDIDCCAxwGCSqGSIb3DQEJBjGCAw0wggMJAgEBMHcwYzELMAkG
+# CzEOMAwGCisGAQQBgjcCARUwIwYJKoZIhvcNAQkEMRYEFGHpjbQhWWkIgMDayfbW
+# XV/4WXrTMA0GCSqGSIb3DQEBAQUABIICAHDzReAnA1dtkKnIRjkN8567FaSFG6fR
+# n8GhLNYt0SYlZ4JXfF+YDpPGzFqaLSF5dZeU4cIwOglH50Uqg/3zaQjqFixdTKte
+# tidqw62R3H4i2FobJfHpV11TfGK8EuOmrJQioMlALzjbW7FQHJvu5BkDqGoqKI0l
+# MMDB6x1RhpVSfwH0FC4gzvFf7ZkLnpXCTyuPOkMThuZRKgmEDPwyvAAPmn6wJdB1
+# MeeEXXEGZyE+zCOsayfJEoYqAoi3KeWPJi7Ksz+cBRccxx3659zofeLhHNlZ7tVq
+# zMbNljOloUPeafnk3+QG1QxmoQQwNsgrMyR8PkMw3Qwu5SQB5VSZMwhhoYP6DG2P
+# Dz2lTQzneEhGJ/MK2cjqm8o5ckneqlLiYvDbbPPUhMxP8gmzFzhkKB2E9x4TsJ91
+# r0R8fuZkbkxtfmmlITQquzRWVqORp8TPwfGupMM8kExPRr6hD3g8COPE+R8QacGa
+# Q5OWTaDvRcaJjXLL8i/nLrZqafgpS14bfpirhdI92ncenZwsHnN/To/QhQ0IgKUu
+# x/nYRICiJ5Y31v/t72wZ+DYNc4rpqvMO8YQ4EFQVMeEzc16hpcx8zg/MNRFrzM7b
+# E6EW8IjVJHnmcWe21aHtS9/nV4hBEaSx09m1b7oZLcSCMNBBqMYT1CMXrjauiIhK
+# BSyLgWW6ugdsoYIDIDCCAxwGCSqGSIb3DQEJBjGCAw0wggMJAgEBMHcwYzELMAkG
 # A1UEBhMCVVMxFzAVBgNVBAoTDkRpZ2lDZXJ0LCBJbmMuMTswOQYDVQQDEzJEaWdp
 # Q2VydCBUcnVzdGVkIEc0IFJTQTQwOTYgU0hBMjU2IFRpbWVTdGFtcGluZyBDQQIQ
 # BUSv85SdCDmmv9s/X+VhFjANBglghkgBZQMEAgEFAKBpMBgGCSqGSIb3DQEJAzEL
-# BgkqhkiG9w0BBwEwHAYJKoZIhvcNAQkFMQ8XDTI0MDcwOTE5NTEyN1owLwYJKoZI
-# hvcNAQkEMSIEIOUxaUp7lYgsZpqUXyNSxjs32qNcnn4+KyBe1scEQNOGMA0GCSqG
-# SIb3DQEBAQUABIICADVWPGkMrMubjE2Wivn4IYGrkTCQ98RKhxXz59QFJFXo1bbn
-# x33I4mk3CpYbz7NtS9oq1/tp15eZDwCsko4PUO/B9molXLjYlcA/ze6qbevOT/N6
-# E6c5ay13s4iNhQlbK81APnKfN4+IKfCgHD/SyJ8vOL1wPBLzKoMyEKiCrvSP7Uzd
-# 82Pwxan/3aOnjmcl9kbWlN0fpzwPlzBhwDVRSej5D8M5PWP7jxY0PrPF8Ftn+qK3
-# pgBuPQov1rsbnNUhD493RZoiYruQRj6hKzAulgw3GZfoMwW+F+3m78F4BEanjJI0
-# oS5u6/cZ8ZSBxScOITEy3Ouxzv9Nn8U8hgGZgxnKPf3E3fqWBxPtqNkF8P2Ez65/
-# a6t/ikh9Z+B5dVucmp0PeUPlfToG2M1lc4ON/eXfsazkyCvhRC4FCVFLzdmCodva
-# sOpCF8lOI6vmsjyjy1ObiKVg972ebGOr5Xt5QsfkaUnfCQwxq/mTLh5++pUaS0Fl
-# /tGCmaQs3qRe+3eWxvz1CXdpqABLLFQq/hZT5J41k2Qj28lmNJ9X43LE8xsyn0Y1
-# sO1voNNB98xVXuP637zh/CEPzQ80k46MvvJRxW0u5shsOwGsAeyPPHBDT3PDbuxV
-# 0n+zu7lnndGwo6p0kf4lzs/b4zA9Ci4mk8B5MQpcu8C14h3eSxMXxibAIhp7
+# BgkqhkiG9w0BBwEwHAYJKoZIhvcNAQkFMQ8XDTI0MDcwOTIxMzY0N1owLwYJKoZI
+# hvcNAQkEMSIEILBKIqMLOl5IgYmVW/vIqKHimFumrsEDZ6krNyCDAdaJMA0GCSqG
+# SIb3DQEBAQUABIICAD4KThrkNmDXmEclYH2anZg8EsFb7s/xXKDL8AUNzcNPy56T
+# 6opjPFce0LihRsZ78IPFqTB49cwC3B02p2Az8/JLs/F5qncTkybL/JyfFzHFPlX1
+# X25y2geiIN5jEoi4mzeFw4TBXofkFOGbcdKRZA++3a0RkRIryL1/oS/a48755KAI
+# 9g0dB6nj8YYojVUoxjmLrisD+ZblSFY88oxclosvdu1zdgqh7v8p7GbADOF77nM8
+# KYFu+Rsai6azOmUB+IISvUswCdLfkTxhJ2IQhDFfK/UiEXqCYwOEAw8+tK3QWRXj
+# LF8bXjHSN+1LXOwUC7r6s3WfDBEaNy+kOABTMlLrQOWUQ7oQXVTBOtpzCkY4Ml7M
+# 3EYFyGdWnJwnfpjaNlWUQEVSomqEgOLh+2r1Qvn8gufFUfEEKIJRWA/gdxDUaG2B
+# PEnViahzWfEjRjtvmO+mgoKpVS+oVGVWF9QO7VGIh30Phy6vN2vTkPQmW7wmoeLI
+# Rv2XA2qQpTD+zy72E+0u3ajRDLot2vIveZ3KxxHMbG4mCSWbA6MdfHslCb4iBd4W
+# OnitEe3530VpMgTwarfLmRC2k88DCjyYYhNF97C6mjS+ki2wWH17WdUcC0E8abpZ
+# dzQcUJPT46xADZcql6+uhOy01cLQKtES8mQfw5pUt6562UFYc21O81DELodc
 # SIG # End signature block
