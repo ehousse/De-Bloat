@@ -944,9 +944,9 @@ $blankjson = @'
 
 $blankjson | Out-File "C:\Users\Default\AppData\Local\Microsoft\Windows\Shell\LayoutModification.xml" -Encoding utf8 -Force
 
-MkDir -Path "C:\Users\Default\AppData\Local\Packages\Microsoft.Windows.StartMenuExperienceHost_cw5n1h2txyewy\LocalState" -Force -ErrorAction SilentlyContinue | Out-Null
-$starturl = "https://github.com/ehousse/Intune-De-Bloat/raw/main/start2.bin"
-invoke-webrequest -uri $starturl -outfile "C:\Users\Default\AppData\Local\Packages\Microsoft.Windows.StartMenuExperienceHost_cw5n1h2txyewy\LocalState\Start2.bin"
+# MkDir -Path "C:\Users\Default\AppData\Local\Packages\Microsoft.Windows.StartMenuExperienceHost_cw5n1h2txyewy\LocalState" -Force -ErrorAction SilentlyContinue | Out-Null
+# $starturl = "https://github.com/ehousse/Intune-De-Bloat/raw/main/start2.bin"
+# invoke-webrequest -uri $starturl -outfile "C:\Users\Default\AppData\Local\Packages\Microsoft.Windows.StartMenuExperienceHost_cw5n1h2txyewy\LocalState\Start2.bin"
 }
 
 
@@ -1853,8 +1853,8 @@ Stop-Transcript
 # SIG # Begin signature block
 # MIImyQYJKoZIhvcNAQcCoIImujCCJrYCAQExCzAJBgUrDgMCGgUAMGkGCisGAQQB
 # gjcCAQSgWzBZMDQGCisGAQQBgjcCAR4wJgIDAQAABBAfzDtgWUsITrck0sYpfvNR
-# AgEAAgEAAgEAAgEAAgEAMCEwCQYFKw4DAhoFAAQU4JuI6mPX5jJeYguRZXn5djND
-# 3PqggiATMIIFjTCCBHWgAwIBAgIQDpsYjvnQLefv21DiCEAYWjANBgkqhkiG9w0B
+# AgEAAgEAAgEAAgEAAgEAMCEwCQYFKw4DAhoFAAQUEaKlIRko/cRljadmwGKjbLC7
+# vNyggiATMIIFjTCCBHWgAwIBAgIQDpsYjvnQLefv21DiCEAYWjANBgkqhkiG9w0B
 # AQwFADBlMQswCQYDVQQGEwJVUzEVMBMGA1UEChMMRGlnaUNlcnQgSW5jMRkwFwYD
 # VQQLExB3d3cuZGlnaWNlcnQuY29tMSQwIgYDVQQDExtEaWdpQ2VydCBBc3N1cmVk
 # IElEIFJvb3QgQ0EwHhcNMjIwODAxMDAwMDAwWhcNMzExMTA5MjM1OTU5WjBiMQsw
@@ -2029,33 +2029,33 @@ Stop-Transcript
 # FDASBgoJkiaJk/IsZAEZFgREQlJJMRUwEwYDVQQDEwxEQlJJIFNVQiBDQTECE1sA
 # AK2/qm0XXVtmUJYAAgAArb8wCQYFKw4DAhoFAKB4MBgGCisGAQQBgjcCAQwxCjAI
 # oAKAAKECgAAwGQYJKoZIhvcNAQkDMQwGCisGAQQBgjcCAQQwHAYKKwYBBAGCNwIB
-# CzEOMAwGCisGAQQBgjcCARUwIwYJKoZIhvcNAQkEMRYEFOO50fkca2t5tzqHht6B
-# CxqZewZgMA0GCSqGSIb3DQEBAQUABIICAHkHbWBsLhjAh/Yvigi1XDkcTmD5IIr7
-# WxNDZwTfPhyTfTxwcloU2t58jo+eyQk6MxKB2IHa5GNkqQzyBiITIgXatj33Mx1c
-# VgM10Fi5mM9mSsUVgI1XKYy2mg7+BVWtuBU8Dz3QgP/SzfAUIOz9uRE4hct1MSv9
-# tEuYgqmKZInGeNy+PoBtmFgt0ztNvyFBVP35/87UumIaAdvtPo8plg9oVaufam4R
-# nL/SpRSnFrP5FbAtTj/uU5nVoxJv0C8maI1ZbqYpa9nvQGO2KRdRq69T/funvLZe
-# z0+lUg7lwdEzKlqrhX/5vTJQvTJidDGDengPyNrw1EujD2jCdXEG8e/JQB3Pe0MS
-# MPtFK65ePEcWX43AOZ0wHSeSYBBVH0idM2q6FBPJKTBFrtFoKkmCK34ziTUkLZpg
-# 67zOTEo9c3Z58GXql7DdTsFeUeY4eBUE2JU+8/n4wn1TK0FsKGwWe41Q7rnvBS5P
-# lwv/Zlkct/Chd3GUUJMAONDiQRmhgWoN/b59yeJO7xnjADQKlDfVHVEQJ2o1Wqo6
-# VtqI1UTdm1L8BOr7pp8Ao4GWHOFdic/htEBwlnQb7PhM4+0Wm+j9lo0+Yi2G6FDK
-# aqk2rUlnw0zXJHujzC601KwWFankJMne1Xsyfy4KzJdBCrVLsohJ3fq3bvsvbCAt
-# 7FyINw/AxOHhoYIDIDCCAxwGCSqGSIb3DQEJBjGCAw0wggMJAgEBMHcwYzELMAkG
+# CzEOMAwGCisGAQQBgjcCARUwIwYJKoZIhvcNAQkEMRYEFJ3EHMeSeROObbmJYyKA
+# kdkWnFboMA0GCSqGSIb3DQEBAQUABIICALWnU++bcMCJF9I8ZTGasviaBbSF0IMv
+# tpGRUgIrGcsY8ry6sG0D4zI66Gf6VSqxaSp1YsTkk9fkBMFNuWoffugqXQv9kgmk
+# fRPkMH/2fsAsal6wbufvLPmwAEyvYpfhF4XvLPSJR8MowVrWpE/5KK3zQEoOHOo9
+# z3AjLWA2bj8sWQdxde2dX704fEYKd9YAR8bCgdlGW5nHzgw+AL1M17exI7pVLTPn
+# 4LX2S+e8PjVPLusDsfNNym7usAjd/MKLZidjyc6lon+RS8GJnTCXlnNVYfYsyAru
+# CS6v7YyMeAHabE6fyMZ4S/UhASY+LH7wNDlToYsc5MhDn+H2xBXUe98Ycvz1STPe
+# k5/73sVkCpWEgnKlbU8niUtG3/Z0TRRWND3SNgz4KGrjUrwtBRRLlRVt8oyXS6+q
+# 2GMCxY4wbSz+F5cZlsyEcc7mWSolpoBVzNfcB6JQrVkwJwYhzg4z42DGBiWJX7mI
+# rK3VMX9L3YosxykORXpB/Mpn16GhWMSo6SOM4mJv3AAXJLH0sD9nJedLOaSrkDZJ
+# yS7/BhC4MqldYjzJruY2AGjxaiSWTbUK2x1R29xoRX+WwPUl01pb0D/otdEQgU9w
+# bn1EhId9MvmyZtNYXi7DFq2Vy0Wwi9hHyEvdgxFaGTyGyKrxzonKcUtYAdUA9B54
+# ctabsWt+7KtCoYIDIDCCAxwGCSqGSIb3DQEJBjGCAw0wggMJAgEBMHcwYzELMAkG
 # A1UEBhMCVVMxFzAVBgNVBAoTDkRpZ2lDZXJ0LCBJbmMuMTswOQYDVQQDEzJEaWdp
 # Q2VydCBUcnVzdGVkIEc0IFJTQTQwOTYgU0hBMjU2IFRpbWVTdGFtcGluZyBDQQIQ
 # BUSv85SdCDmmv9s/X+VhFjANBglghkgBZQMEAgEFAKBpMBgGCSqGSIb3DQEJAzEL
-# BgkqhkiG9w0BBwEwHAYJKoZIhvcNAQkFMQ8XDTI0MDcxMDAwMzcyNFowLwYJKoZI
-# hvcNAQkEMSIEIJkDymMTmmFh0Hjfawo2wmXYQwmQk4KzuIyTTDOV5mtOMA0GCSqG
-# SIb3DQEBAQUABIICAEcE0NOf8jrSnbnopT+50tnmxX1wod4psuZg3xTAulRxkZrT
-# 8tFlyN0xw82CUV7TVXpgU31xTyAkp5j9rwrZWuuMhIg4eUDcpK3cAqCI75Xk5GRj
-# 2ee1r9Q93nzSxcp7rw3C+W8k3cv+YAKir7q8AiGj+Hp1edB/xutqdCiu81J1cJhQ
-# +xDg+h/1nMpuKhF70ST7H7LLOxMgO1AOO7wDzqGpIp0Yz0+QN/L41h6YzmW3hASL
-# duyoqUQ3+5a7J8Rbd7wdB/QM+DqE1cp8EzpfWiBI8Csn2/pGLwEQjz3JGEo8zfzT
-# lyuWBoj/+oWuhHijfaEW/xkxSK0eMVbDho154I0ZrQ3qpO2wEiVW5HJRRwsTyAYa
-# mO/xGu9boZNHo8zIoFrJbEYnZzLJrLAvJYBnlvpxoj4fQ/eee+sqjOTQ69QPwK/m
-# iCcZwENmCUcXEh+B54ODPtlY64PsCT+evRrKKDmzHuy1ifrwkB1HsIkv9U6g+ak1
-# LPMVRunPS8uCaKy5rNBPUXEyCa7CoRW1p+iHzgMSQ9uJm5oR7Cq5asHgE/Om3Nib
-# 0nPWN4G+yXGPrtk/nPeoc1wb6g0mE7xLvIAo4HAjVk/AZuDIZR6Q6L+PLvaKurQ8
-# KtAz3F07vrFNSEu1SKxzRN+Cty0txrvBK9N0tY5GPhVi3szshNc5p8ryJFFc
+# BgkqhkiG9w0BBwEwHAYJKoZIhvcNAQkFMQ8XDTI0MDcxMDIwNDUxOVowLwYJKoZI
+# hvcNAQkEMSIEIAQAQoVnJxK57gTMUD9fv6Slm+reHcgdIcw4KzgcepMrMA0GCSqG
+# SIb3DQEBAQUABIICACcNRUElzVCxKVfnduGIz61hKeU6LWXhsDVfH1EJBLuZPFLc
+# AXYiuNUk6RI88VWEZl1seAJuB9Am89mU6C1Hvk3+L6IXgIw3xajroOdZGqdRTK86
+# KEnDwnNYlRJCSFn4P3XLJ/1dQOTMTVaNgc56T66xV+BvDh7V5iXyoKiGS5D+92jg
+# AdHrnfZ7xtqq7DqWALLBMLOXqPfP342KHaY3htMS7fH1O4IZFgjn2SyJaYIRpeYC
+# KIoYesl4EuODI0zaNfQoneGEH8XhnyhK26hFqpHxOOtmVhKWQmG6TeV9ZZWEaZqm
+# qnrm8b8nXHRRMd3TN6qaQdDsZaecwZY4mEFyKLNDxBJTcyG4ANP5LeY4eOjLOXYv
+# KZbLs2Lw+er6v3zFllAPTSkCvZp4Q1nJByUBGwfErhBW/a9+kEI4fPfek8PI8F9h
+# Zvt2XKf4spwAOc+bkiN+TnCGcda9sQfKkUl9qoLPSURMPkE5hH4rEajxaxpDNiat
+# EcGMVROWXSmMlo9dn+arY4191Eb076ZUW0elxCA01eBRB5B22I3x1Owgv5sAQ4Lc
+# QXMCHI0zMW2XnCWQlkzkoujtKoJ7plCJ1Et2OxGX2njEiYSrpUbK+UqHdg/O8vFw
+# q+2gsMhk/9A66jlsLqfackI0IRNJLsQT7579QC06VMENfVzhEMFvQVXFlvxb
 # SIG # End signature block
